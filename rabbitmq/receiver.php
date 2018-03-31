@@ -5,8 +5,10 @@
  * Date: 03/04/18
  * Time: 10:06
  */
-$loader = require dirname(__FILE__).'/../vendor/autoload.php';
-$loader->register();
+require dirname(__FILE__).'/../vendor/autoload.php';
+require dirname(__FILE__).'/../classes/mysqlConnector.php';
 require 'WorkerReceiver.php';
+require 'WorkerSender.php';
+
 $receiver = new WorkerReceiver();
 $receiver->listen();

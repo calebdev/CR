@@ -1,17 +1,17 @@
 <?php
+namespace rabbit;
 use PhpAmqpLib\Connection\AMQPStreamConnection;
 use PhpAmqpLib\Message\AMQPMessage;
 
 class WorkerSender
 {
-    public function execute($message)
+    public static function execute($message)
     {
         $connection = new AMQPStreamConnection('localhost', 5672, 'guest', 'guest');
         $channel = $connection->channel();
 
-        $msg_json = json_encode($message);
-
         $channel->queue_declare('insert_csv', false, false, false, false);
+        $msg_json = json_encode($message);
 
         $msg = new AMQPMessage($msg_json);
         $channel->basic_publish($msg, '', 'insert_csv');

@@ -5,6 +5,7 @@ $loader = require '../vendor/autoload.php';
 $loader->register();
 require '../classes/mysqlConnector.php';
 require '../classes/FrontController.php';
+require '../rabbitmq/WorkerSender.php';
 
 
 

@@ -9,7 +9,7 @@ class MySqlConnector {
     public static function getPdo() {
         if(is_null(self::$_pdoInstance)) {
             try{
-                $params = Yaml::parseFile('../config/database.yml', Yaml::PARSE_OBJECT_FOR_MAP);
+                $params = Yaml::parseFile(dirname(dirname(__FILE__)).'/config/database.yml', Yaml::PARSE_OBJECT_FOR_MAP);
 
                 if(property_exists($params->database, 'host') && property_exists($params->database, 'bdName') && property_exists($params->database, 'user') && property_exists($params->database, 'password')){
                     $dns = "mysql:host=".$params->database->host.";dbname=".$params->database->bdName.";charset=utf8";

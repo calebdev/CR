@@ -59,7 +59,13 @@ class DefaultController extends \classes\FrontController
         $file_name = sha1(time()).'.csv';
 
         if(move_uploaded_file($csvFile, '../uploads/'.$file_name ) ){
-            $config = new LexerConfig();
+
+            $message = [
+              'type'  => 'parse',
+              'file'  =>  $file_name
+            ];
+            \rabbit\WorkerSender::execute($message);
+            /*$config = new LexerConfig();
             $config->setDelimiter(';');
             $lexer = new Lexer($config);
 
@@ -87,9 +93,10 @@ class DefaultController extends \classes\FrontController
             });
 
             $lexer->parse('../uploads/'.$file_name, $interpreter);
+            */
 
         }
-        $this->render('upload.html', ['lists' => $list]);
+        $this->render('upload.html');
     }
 
     public function uploadAction(){

@@ -24,7 +24,7 @@ class FrontController
         $this->request = Request::createFromGlobals();
     }
 
-    public function render($name, $context){
+    public function render($name, $context = []){
         $result = $this->twig->render($name,$context);
         $response = new Response(
             $result,
