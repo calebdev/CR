@@ -9,7 +9,7 @@ Lancer la commande : composer install
 /public/
 # Config
 - Configurer votre apache server :
-<pre>
+<code>
 <VirtualHost *:80>
     ServerName test-esokia.loc
     DocumentRoot "/home/esokia/work/www/test-esokia.loc/public"
@@ -21,9 +21,9 @@ Lancer la commande : composer install
 	Require all granted
     </Directory>
 </VirtualHost>
-</pre>
+</code>
 - Rendez vous a l'ulr : http://test-esokia.loc/
 
-###Thanks!
+### Thanks!
 
 
