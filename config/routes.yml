@@ -1,0 +1,16 @@
+# routes.yml
+index:
+    path:     /
+    defaults: { _controller: 'DefaultController::indexAction' }
+
+upload:
+    path:     /upload
+    defaults: { _controller: 'DefaultController::uploadAction' }
+
+import:
+    path:     /import
+    defaults: { _controller: 'DefaultController::importCsvAction' }
+
+duree_total:
+    path:     /duree-total
+    defaults: { _controller: 'DefaultController::dureeTotalAction' }

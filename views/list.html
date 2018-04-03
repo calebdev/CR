@@ -1,0 +1,27 @@
+
+<table border="1">
+    <thead>
+        <th>Compte facturé</th>
+        <th>N° Facture</th>
+        <th>N° abonné</th>
+        <th>Date</th>
+        <th>Heure</th>
+        <th>Durée/volume réel</th>
+        <th>Durée/volume facturé</th>
+        <th>Type</th>
+    </thead>
+    <tbody>
+        {% for list in lists %}
+        <tr>
+            <td>{{ list.compte_facture|e }}</td>
+            <td>{{ list.num_facture|e }}</td>
+            <td>{{ list.num_abonne|e }}</td>
+            <td>{{ list.date|e }}</td>
+            <td>{{ list.heure|e }}</td>
+            <td>{{ list.duree_volume_reel|e }}</td>
+            <td>{{ list.duree_volume_facrture|e }}</td>
+            <td>{{ list.type|e }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

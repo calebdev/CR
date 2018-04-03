@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Titre de page</title>
+
+</head>
+<body>
+    <a href="duree-total">Durée totale réelle des appels effectués après le 15/02/2012 (inclus)</a>
+
+    <form enctype="multipart/form-data" action="import" method="post">
+        <label>Délimiteur</label>
+        <input type="text" name="delimiter" id="delimiter" value=";"><br>
+        <label>Commence a partir de</label>
+        <input type="text" name="init" id="init" value="2"><br>
+        <label>Choisir le fichier csv</label>
+        <input type="file" name="csv" id="input-file" accept=".csv">
+        <p id="percent"></p>
+        <div id="tabValidator">
+
+        </div>
+        <input type="submit" value="Importer">
+    </form>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/uploader.js"></script>
+</body>
+</html>
