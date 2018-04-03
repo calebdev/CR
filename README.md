@@ -1,2 +1,5 @@
 # Instalation
-lancer la commande : composer install
+Lancer la commande : composer install
+# Dossier public
+/public/
+
